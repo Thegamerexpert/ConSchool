@@ -1,0 +1,20 @@
+/***Paleta de colores***/
+
+/*Letras*/
+.color-a {
+    color: rgba(255, 145, 77, 100);
+}
+.color-b {
+    color: rgba(255, 115, 28, 100);
+}
+.color-c {
+    color: rgba(222, 86, 2, 87);
+}
+.color-d {
+    color: rgba(0, 142, 145, 57);
+}
+.color-e {
+    color: rgba(2, 216, 222, 87);
+}
+
+/***Efectos botones***/
