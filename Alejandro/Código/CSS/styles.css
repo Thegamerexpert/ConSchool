@@ -1,0 +1,386 @@
+/*Esto es el reset original*/
+
+*
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	
+}
+
+/*Aquí comienza la maquetación del login*/
+
+.panelLogin
+{
+	background-color: #02D8DE;
+	border-color: none;
+	border-style: none;
+	float: left;
+	height: 450px;
+	margin-left: 225%;
+	margin-right: 225%;
+	margin-top: 280px;
+	overflow: hidden;
+	width: 650px;
+}
+
+.imagenLoginContenedor
+{
+
+}
+
+.logoLogin
+{
+	margin-left: 40%;
+}
+
+
+.botonLogin
+{
+	margin-left: 15%;
+}
+
+.formularioLogin
+{
+
+}
+
+.divLogin
+{
+	margin-top: 20px;
+	margin-left: 225px;
+}
+
+.titulosLogin
+{
+	color: black;
+	font-family: Arial, sans-serif;
+	font-size: 1.5rem;
+}
+
+#encabezado
+{
+	
+	height: 62px;
+	width: 100%;
+	background-color: #DE5602;
+	border-style: none;
+}
+
+/*Aquí comienza la sección del nav y menú*/
+
+nav
+{
+background-color: #FF731C;
+height: 125px;
+position: fixed;
+top: 0;
+transition-duration: 0.75s;
+transition-property: top;
+width: 100%;
+z-index: 1;
+}
+
+#logoNav
+{
+	background-color: none;
+	border-radius: 50%;
+	float: left;
+	height: 100%;
+	margin-left: 0px;
+	margin-top: 0px;
+	width: 229px;
+
+}
+
+#menu
+{
+	float: right;
+	list-style-type: none;
+	margin-right: 80px;
+	overflow: hidden;
+	width: auto;
+}
+
+.elementoMenu
+{
+	float:left;
+	margin: 40px 40px;
+	margin-top: 30px;
+}
+
+.elementoMenu>a
+{
+	color: black;
+	font-family: Arial, sans-serif;
+	font-size: 2.25rem;
+	position: inherit;
+	text-decoration: none;
+	transition-duration: 0.5s;
+	transition-property: color;
+
+}
+
+.elementoMenu>a:hover
+{
+	color: white;
+}
+
+/*Aquí comienza la maquetación del contenido*/
+
+.contenedor
+{
+	display: grid;
+  grid-template-columns: 270px 1650px;
+  height: 100%;
+}
+
+/*Aquí comienza la maquetación de la columna de datos personales*/
+
+.fotoPersonal
+{
+	background-color: none;
+	background-image: url("../Media/cara_generica.jpeg");
+	border-radius: 50%;
+	height: 100px;
+	margin-left: 40px;
+	margin-top: 200px;
+	width: 100px;
+}
+
+.colDatosPersonales
+{
+	background-color: #008E91;
+	border-style: none;
+	float: left;
+	height: 100%;
+	text-align: justify;
+	width: 100%;
+}
+
+.colDatosPersonales > p
+{
+	color: black;
+	font-family: Arial, sans-serif;
+	font-size: 1rem;
+	padding-top: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+	transition-duration: 0.5s;
+	transition-property: color;
+}
+
+.colDatosPersonales >p:hover
+{
+	color: white;
+}
+
+/*Aquí comienza la maquetación de los contenidos de las pestañas*/
+
+.tituloPestanya
+{
+	font-family: Arial, sans-serif;
+	font-size: 1.5rem;
+	margin-top: 100px;
+	text-align: center;
+}
+
+.colContenido
+{
+	background-color: white;
+}
+
+.panel
+{
+	background-color: #FF914D;
+	border-color: #008E91;
+	border-style: solid;
+	float: left;
+	height: 250px;
+	margin-left: 56.75px;
+	margin-right: 56.75px;
+	margin-top: 80px;
+	overflow: hidden;
+	width: calc(33.33% - 127px);
+}
+
+.tituloPanel
+{
+	font-family: Arial, sans-serif;
+	font-size: 1.5rem;
+	margin-top: 30px;
+	text-align: center;
+}
+.contenidoPanel
+{
+	font-family: Arial, sans-serif;
+	font-size: 1rem;
+	text-align: center;
+	transition-duration: 0.5s;
+	transition-property: color;
+}
+
+.contenidoPanel:hover
+{
+	color: white;
+}
+
+/*Aquí se empieza a maquetar el calendario de la Agenda*/
+
+.panelCalendario
+{
+	background-color: #FF914D;
+	border-color: #008E91;
+	border-style: solid;
+	border-style: none;
+	box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+	float: left;
+	height: 400px;
+	margin-left: 56.75px;
+	margin-right: 56.75px;
+	margin-top: 80px;
+	overflow: hidden;
+	width: calc(33.33% - 127px);
+}
+
+.panelCalendario > header
+{
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 10px;
+  justify-content: space-between;
+}
+
+header .iconos
+{
+  display: flex;
+}
+
+header .iconos span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.5rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.iconos span:last-child
+{
+  margin-right: -10px;
+}
+header .iconos span:hover
+{
+  background: #f2f2f2;
+}
+header .fechaActual
+{
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendario
+{
+  padding: 10px;
+}
+.calendario ul
+{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendario .dias
+{
+  margin-bottom: 20px;
+}
+.calendario li
+{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendario .semanas li
+{
+  font-weight: 500;
+  cursor: default;
+}
+.calendario .dias li
+{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+
+.dias li.inactive
+{
+  color: #aaa;
+}
+.dias li.active
+{
+  color: #fff;
+}
+.dias li::before
+{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.dias li.active::before
+{
+  background: #02D8DE;
+}
+.dias li:not(.active):hover::before
+{
+  background: #f2f2f2;
+}
+
+/*Aquí empieza la maquetación de las asignaturas para el alumno*/
+
+.tabla
+{
+	border-color: #008E91;
+	border-style: solid;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.paddingEntreColumnas td 
+{
+  padding: 0 15px;
+}
+
+
+/*Aquí empieza la maquetación de los distintos foros*/
+
+.panelForo
+{
+	background-color: #FF914D;
+	border-color: #008E91;
+	border-style: solid;
+	display: auto;
+	float: left;
+	height: 125px;
+	margin-bottom: 65px;
+	margin-left: 200px;
+	margin-right: 200px;
+	margin-top: 80px;
+	overflow: hidden;
+	width: calc(75%);
+}
+
+.ultimoMensajeForo
+{
+	font-family: Arial, sans-serif;
+	margin-top: 15px;
+	text-align: center;
+}
