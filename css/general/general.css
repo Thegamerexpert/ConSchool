@@ -1,20 +1,49 @@
 /***Paleta de colores***/
 
 /*Letras*/
-.color-a {
-    color: rgba(255, 145, 77, 100);
+.ctext-a {
+    color: rgb(255, 145, 077, 1);
 }
-.color-b {
-    color: rgba(255, 115, 28, 100);
+.ctext-b {
+    color: rgb(255, 115, 028, 1);
 }
-.color-c {
-    color: rgba(222, 86, 2, 87);
+.ctext-c {
+    color: rgb(222, 086, 002, 0.87);
 }
-.color-d {
-    color: rgba(0, 142, 145, 57);
+.ctext-d {
+    color: rgb(000, 142, 145, 0.57);
 }
-.color-e {
-    color: rgba(2, 216, 222, 87);
+.ctext-e {
+    color: rgb(002, 216, 222, 0.87);
 }
 
-/***Efectos botones***/
+/***Backgrounds***/
+
+.cbg-a {
+    background-color: rgb(255, 145, 077, 1);
+}
+.cbg-b {
+    background-color: rgb(255, 115, 028, 1);
+}
+.cbg-b:hover {
+    background-color: rgb(255, 115, 028, 1);
+}
+.cbg-c {
+    background-color: rgb(222, 086, 002, 0.87);
+}
+.cbg-d {
+    background-color: rgb(000, 142, 145, 0.57);
+}
+.cbg-e {
+    background-color: rgb(002, 216, 222, 0.87);    
+}
+.cbg-f {
+    background-color: rgba(255, 255, 255, 0.87);    
+}
+
+/*Boc*/
+
+.containerShadowBox{
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
