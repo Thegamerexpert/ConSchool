@@ -112,7 +112,7 @@ z-index: 1;
 .fotoPersonal
 {
 	background-color: none;
-	background-image: url("../Media/cara_generica.jpeg");
+	background-image: url("../../media/images/cara_generica.jpg");
 	border-radius: 50%;
 	height: 100px;
 	margin-left: 40px;
