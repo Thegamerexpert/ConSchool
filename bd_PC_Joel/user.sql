@@ -1,5 +1,0 @@
-# Privilegios para `conschool`@`%`
-
-GRANT USAGE ON *.* TO `conschool`@`%` IDENTIFIED BY PASSWORD '*7A4AEBC69F85740EBEF623CB63458B6EC23D0381';
-
-GRANT ALL PRIVILEGES ON `conschool`.* TO `conschool`@`%` WITH GRANT OPTION;

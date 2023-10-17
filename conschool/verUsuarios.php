@@ -1,3 +1,0 @@
-<?php
-	$usuario = Usuario::verUsuario();
-?>
