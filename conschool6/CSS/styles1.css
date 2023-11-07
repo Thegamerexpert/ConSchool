@@ -456,6 +456,16 @@ header .fechaActual
 	text-align: center;
 }
 
+/*Aquí comienza la maquetación de los formularios de mensajes*/
+
+.elementoFormularioMensajes
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	text-align: center;
+}
+
 /*Aquí empieza las asignaturas para el profesor*/
 
 .panelAsignaturasProfesor
@@ -473,3 +483,4 @@ header .fechaActual
 	overflow: hidden;
 	width: calc(75%);
 }
+
