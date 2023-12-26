@@ -1,0 +1,173 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: capitalize;
+  text-decoration: none;
+
+}
+/* ORIGINAL */
+/* nav{
+  position: absolute;
+  top: 20%;
+  left:50%;
+  background-color: black;
+  width: 400px;
+  line-height: 40px;
+  padding: 22px;
+}
+nav label{
+  color: white;
+  font-size: 22px;
+  display: block;
+  cursor: pointer;
+}
+.button span{
+  float: right;
+  line-height:35px ;
+}
+nav ul{
+  position: absolute;
+  background: #1b1b1b;
+  list-style: none;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  border-radius: 5px ;
+  -webkit-border-radius: 5px ;
+  -moz-border-radius: 5px ;
+  -ms-border-radius: 5px ;
+  -o-border-radius: 5px ;
+  display: none;
+}
+[id^=arrow-button]:checked +ul{
+  display: block;
+}
+nav ul li {
+  line-height: 40px;
+  padding:8px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  }
+nav ul li label{
+    font-size: 18px;
+  }
+nav ul li a{
+color: white;
+text-decoration: none;
+font-size: 18px;
+display: block;
+}
+input{
+  display:none;
+} */
+
+
+/* NUEVO desplegable columna perfil*/
+.colDatosPersonales{
+  top: 200px;
+  position: absolute;
+  background-color: #008E91;
+  width: 550px;
+  line-height: 40px;
+  padding: 22px;
+  height: 110px;
+ 
+}
+
+/* apartado desplegable fijo */
+.colDatosPersonales label{
+  color: white;
+  font-size: 22px;
+  display: block;
+  cursor: pointer;
+}
+
+/* ver nombre y apellidos */
+.info-personal{
+  display: flex;
+}
+
+/* .info-personal:hover{
+  color: black;
+} */
+
+.nombre{
+  padding-top: 5%;
+  margin-left: 5%;
+}
+.apellidos{
+  margin-left: 3%;
+  float: right;
+  padding-top: 5%;
+}
+/* checkbox para que funcione desplegar */
+input{
+  display:none;
+} 
+
+/* icono flecha */
+.button span{
+  float: right;
+  line-height:340% ;
+}
+.button span:hover{
+  color: black;
+}
+
+/* apartado que se despliega */
+.colDatosPersonales ul{
+  position: absolute;
+  background: #008E91;
+  list-style: none;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  border-radius: 5px ;
+  -webkit-border-radius: 5px ;
+  -moz-border-radius: 5px ;
+  -ms-border-radius: 5px ;
+  -o-border-radius: 5px ;
+  display: none;
+}
+
+/* para abrir el desplegable columna perfil */
+[id^=arrow-button]:checked +ul{
+  display: block;
+}
+
+  /* Datos dentro desplegable columna perfil */
+.colDatosPersonales ul li {
+color: white;
+text-decoration: none;
+font-size: 18px;
+display: block;
+line-height: 40px;
+padding:8px 20px;
+cursor: pointer;
+border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.colDatosPersonales ul li:hover {
+color: black;
+}
+
+
+/* espaciado entre foto y nombre y contenido del desplegable */
+.menu{
+  margin-top: 55px;
+}
+
+.fotoPersonal
+{
+	background-color: none;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+  float: left;
+  margin-top:-15px ;
+}
+
+
+

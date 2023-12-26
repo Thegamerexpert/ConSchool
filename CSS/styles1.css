@@ -80,7 +80,19 @@ body
 nav
 {
 	background-color: #FF731C;
-	height: 125px;
+	height: 13.36%;
+	position: fixed;
+	top: 0;
+	transition-duration: 0.75s;
+	transition-property: top;
+	width: 100%;
+	z-index: 1;
+}
+
+#navBar
+{
+	background-color: #FF731C;
+	height: 13.36%;
 	position: fixed;
 	top: 0;
 	transition-duration: 0.75s;
@@ -94,10 +106,17 @@ nav
 	background-color: none;
 	border-radius: 50%;
 	float: left;
-	height: 100%;
-	margin-left: 0px;
-	margin-top: 0px;
-	width: 229px;
+	height: 15%;
+	width: 25%;
+
+}
+
+#logoResponsive
+{
+	border-radius: 0%;
+	float: left;
+	height: 666%;
+	width: 25%;
 
 }
 
@@ -122,6 +141,7 @@ nav
 	color: black;
 	font-family: Arial, sans-serif;
 	font-size: 2.25rem;
+	padding: 15%;
 	position: inherit;
 	text-decoration: none;
 	transition-duration: 0.5s;
@@ -200,7 +220,7 @@ nav
 	height: 100%;
 }
 
-.panel
+/*.panel
 {
 	background-color: #FF914D;
 	border-color: #008E91;
@@ -213,7 +233,48 @@ nav
 	overflow: hidden;
 	width: calc(33.33% - 127px);
 }
+*/
 
+.panel {
+	background-color: #FF914D;
+	border-color: #008E91;
+	border-style: solid;
+	float: left;
+	height: 250px;
+	margin-left: 56.75px;
+	margin-right: 56.75px;
+	margin-top: 80px;
+	overflow: hidden;
+	width: calc(33.33% - 127px);
+  }
+
+	/* Añadimos un media query para pantallas de una anchura máxima de 1080px */
+	@media (max-width: 1080px) {
+	.panel {
+		width: calc(50% - 113.5px); /* Adjust width for smaller screens */
+		margin-left: 20px; /* Adjust left margin */
+		margin-right: 20px; /* Adjust right margin */
+		}
+	}
+
+  /* Añadimos un media query para pantallas de una anchura máxima de 768px */
+  @media (max-width: 768px) {
+	.panel {
+	  width: calc(50% - 113.5px); /* Adjust width for smaller screens */
+	  margin-left: 20px; /* Adjust left margin */
+	  margin-right: 20px; /* Adjust right margin */
+	}
+  }
+  
+  /* Añadimos un media query para pantallas con una anchura máxima de 480px */
+  @media (max-width: 480px) {
+	.panel {
+	  width: 100%; /* Make the panel occupy the full width */
+	  margin: 20px; /* Add equal margins to all sides */
+	}
+
+
+  }
 .tituloPanel
 {
 	font-family: Arial, sans-serif;
@@ -395,6 +456,16 @@ header .fechaActual
 	text-align: center;
 }
 
+/*Aquí comienza la maquetación de los formularios de mensajes*/
+
+.elementoFormularioMensajes
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	text-align: center;
+}
+
 /*Aquí empieza las asignaturas para el profesor*/
 
 .panelAsignaturasProfesor
@@ -412,3 +483,4 @@ header .fechaActual
 	overflow: hidden;
 	width: calc(75%);
 }
+

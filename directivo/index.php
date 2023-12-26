@@ -1,10 +1,47 @@
+<?php session_start(); 
+include 'db.php'; // Asegúrate de que la ruta al archivo db.php sea correcta
+
+$servername = "localhost:3307";
+$username = "root";
+$password = "";
+$dbname = "conschool";
+$con = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$con) {
+    die("La conexión a la base de datos falló: " . mysqli_connect_error());
+}
+
+$userID = $_SESSION['userID'];
+
+// Consulta para los últimos mensajes
+$sqlMensajes = "SELECT textoMensaje, fechaHoraEnvio FROM mensajes WHERE idDestinatario = '$userID' ORDER BY fechaHoraEnvio DESC LIMIT 5";
+$resultMensajes = mysqli_query($con, $sqlMensajes);
+$ultimosMensajes = [];
+if ($resultMensajes) {
+    while ($row = mysqli_fetch_assoc($resultMensajes)) {
+        $ultimosMensajes[] = $row;
+    }
+}
+
+
+
+// Consulta para los eventos
+$sqlEventos = "SELECT nombreEvento FROM eventos ORDER BY fechaEvento LIMIT 5";
+$resultEventos = mysqli_query($con, $sqlEventos);
+$proximosEventos = [];
+if ($resultEventos) {
+    while ($row = mysqli_fetch_assoc($resultEventos)) {
+        $proximosEventos[] = $row['nombreEvento'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ConSchool</title>
-	<link rel="stylesheet" href="CSS/styles.css">
+	<link rel="stylesheet" href="../CSS/stylesres.css">
 
 	<!-- Google Font Link for Icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
@@ -12,21 +49,21 @@
 
 </head>
 <body>
-	<?php include "menu_profesor.html"?>
+	<?php include "menu_profesor_y_direccion.html"?>
 
 	<div class="contenedor">
 
 		<div class="colDatosPersonales">
 			
-			<img class="fotoPersonal" src="Media/cara_generica.jpg" alt="Foto personal">
+					<img class="fotoPersonal" src="../Media/cara_generica.jpg" alt="Foto personal">
 
-			<p>Nombre</p>
+			<p id="nombre">Nombre</p>
 			<br>
-			<p>Apellidos</p>
+			<p id="apellidos">Apellidos</p>
 			<br>
-			<p>Curso actual</p>
+			<p>Curso: <span id="cursoActual">Curso actual</span></p>
 			<br>
-			<p>Centro</p>
+			<p>Número de centro: <span id="centro">Centro</span></p>
 		</div>
 
 		<div class="colContenido">
@@ -35,39 +72,36 @@
 
 			<div class="panel">
 
-				<p class="tituloPanel">Alumnado</p>
+				<p class="tituloPanel"><a href="altaUsuarios.php">Dar de alta Usuarios</a></p>
 				<br>
-				<p class="contenidoPanel"><a href="">Infantil</a></p>
+				<p class="contenidoPanel"><a href="altaAlumno.php">Alumnos</a></p>
 				<br>
-				<p class="contenidoPanel"><a href="">Primaria</a></p>
+				<p class="contenidoPanel"><a href="altaProfesor.php">Profesores</a></p>
 				<br>
-				<p class="contenidoPanel"><a href="">Secundaria</a></p>
+				<p class="contenidoPanel"><a href="">Administrativos</a></p>
 				<br>
-				<p class="contenidoPanel"><a href="">Bachillerato</a></p>
+				
 
 			</div>
 
 			<div class="panel">
 			
-				<p class="tituloPanel">Profesorado</p>
+				<p class="tituloPanel">Gestion cursos</p>
 				<br>
-				<p class="contenidoPanel"><a href="">Infantil</a></p>
+				<p class="contenidoPanel"><a href="altaCurso.php">Añadir Asignaturas</a></p>
 				<br>
-				<p class="contenidoPanel"><a href="">Primaria</a></p>
-				<br>
-				<p class="contenidoPanel"><a href="">Secundaria</a></p>
-				<br>
-				<p class="contenidoPanel"><a href="">Bachillerato</a></p>
-				<br>
+				
+				
 
 			</div>
 
 			<div class="panel">
 
-				<p class="tituloPanel">Mensajes</p>
-				<br>
-				<p class="contenidoPanel">0 <a href="">mensajes</a> no leídos</p>
-				<!--Integrar en la etiqueta "a", en el href, un enlace a un modal o similar que lleve a una pestaña de mensajes -->
+			<p class="tituloPanel">Mensajes</p>
+                <?php foreach ($ultimosMensajes as $mensaje): ?>
+                    <p class="contenidoPanel"><?php echo htmlspecialchars($mensaje['textoMensaje']); ?></p>
+                <?php endforeach; ?>
+				
 
 			</div>
 
@@ -100,16 +134,12 @@
 
 			<div class="panel">
 
-				<p class="tituloPanel">Eventos</p>
-				<br>
-				<p class="contenidoPanel"><a href="">Evento 1</a></p>
-				<br>
-				<p class="contenidoPanel"><a href="">Evento 2</a></p>
-				<br>
-				<p class="contenidoPanel"><a href="">Evento 3</a></p>
-				<br>
-				<p class="contenidoPanel"><a href="">Evento 4</a></p>
-
+			<p class="tituloPanel">Eventos</p>
+                <?php foreach ($proximosEventos as $evento): ?>
+                    <p class="contenidoPanel"><?php echo htmlspecialchars($evento); ?></p>
+                <?php endforeach; ?>
+				</br>
+			<p class="contenidoPanel"><a href="listarEventos.php">Gestión eventos</a></p>
 			</div>
 
 		</div>
@@ -123,4 +153,32 @@
 	</script>
 
 </body>
+<?php 
+$userID = $_SESSION['userID'];
+
+// Realiza una consulta SQL para obtener los datos personales del usuario
+$query2 = "SELECT Nombre, Apellidos, cursoActual, id_centro FROM Usuario WHERE idUsuario = '$userID'";
+$result2 = mysqli_query($conn, $query2);
+
+// Verifica si se encontraron resultados
+if (mysqli_num_rows($result2) > 0) {
+ // Procesa y muestra los datos aquí
+ while ($row = mysqli_fetch_assoc($result2)) {
+     $nombre = $row['Nombre'];
+     $apellidos = $row['Apellidos'];
+     $curso = $row['cursoActual'];
+     $centro = $row['id_centro'];
+    // Asigna los datos a los elementos HTML utilizando PHP
+    echo '<script>';
+    echo 'document.getElementById("nombre").innerHTML = "' . $nombre . '";';
+    echo 'document.getElementById("apellidos").innerHTML = "' . $apellidos . '";';
+    echo 'document.getElementById("cursoActual").innerHTML = "' . $curso . '";';
+    echo 'document.getElementById("centro").innerHTML = "' . $centro . '";';
+    echo '</script>';
+} }else {
+ 
+}
+
+$conn->close();
+?>
 </html>

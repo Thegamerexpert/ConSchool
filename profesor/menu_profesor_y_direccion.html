@@ -11,18 +11,23 @@
 		<nav id ="navBar">
 
 			<a href="index.html">
-			<div id="logoNav"><img src="../Media/logo1_Definitivo.png" alt="Logo de ConSchool"></div> 
+			<div id="logoNav"><img id="logo-imagen" src="../Media/logo1_Definitivo.png" alt="Logo de ConSchool"></div> 
 			</a>
 
 			<ul id="menu">
 				
-				<li class="elementoMenu"><a href="index_profesor.php">Inicio</a></li>
-				<li class="elementoMenu"><a href="">Cursos</a></li>
-				<li class="elementoMenu"><a href="index_foros.php">Foros</a></li>
-				<li class="elementoMenu"><a href="">Mensajes</a></li>
-				<li class="elementoMenu"><a href="">Agenda</a></li>
+				<li class="elementoMenu"><a href="index.php">Inicio</a></li>
+				<li class="elementoMenu"><a href="cursos.php">Cursos</a></li>
+				<li class="elementoMenu"><a href="gestionNotas1.php">Notas</a></li>
+				<li class="elementoMenu"><a href="foros.php">Foros</a></li>
+				<li class="elementoMenu"><a href="mensaje.php">Mensajes</a></li>
+				<li class="elementoMenu"><a href="agenda.php">Agenda</a></li>
 			</ul>
-
+			<form action="../back/" method="post">
+				<button type="submit" class="cerrar-sesion-btn">
+					<img  id="cerrar-sesion-btn-img" src="../Media/exit-logout-sign-out.svg"> <!--logo log-out  -->
+				</button>
+			</form>
 		</nav>
 
 	</header>

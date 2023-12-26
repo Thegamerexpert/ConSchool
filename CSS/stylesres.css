@@ -1,0 +1,657 @@
+/* Esto es el reset original */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hacer el cuerpo de la página scrollable en dispositivos pequeños */
+body {
+    z-index: -5;
+    overflow-x: hidden;
+}
+
+/* Estilos para el título */
+.titulo {
+    color: #02D8DE;
+    margin-bottom: -15px;
+    margin-top: 150px;
+    text-align: center;
+}
+
+/* Aquí comienza la maquetación del login */
+.panelLogin {
+    background-color: #FF914D;
+    border-color: none;
+    border-radius: 15%;
+    border-style: none;
+    float: left;
+    margin-left: 10%; /* Modificado para hacerlo más responsivo */
+    margin-right: 10%; /* Modificado para hacerlo más responsivo */
+    margin-top: 40px;
+    overflow: hidden;
+    width: 80%; /* Modificado para hacerlo más responsivo */
+}
+
+/* esto esta igual... */
+.logoLogin
+{
+	margin-left: 40%;
+}
+
+
+.botonLogin
+{
+	margin-left: 15%;
+}
+
+
+
+.divLogin
+{
+	margin-top: 20px;
+	margin-left: 225px;
+}
+
+.titulosLogin
+{
+	color: black;
+	font-family: Arial, sans-serif;
+	font-size: 1.25rem;
+}
+
+#encabezado
+{
+	
+	height: 62px;
+	width: 100%;
+	background-color: #DE5602;
+	border-style: none;
+}
+/* Estilos para la barra de navegación (nav) */
+nav {
+    background-color: #FF731C;
+    height: 90px; 
+    position: fixed;
+    top: 0;
+    transition-duration: 0.75s;
+    transition-property: top;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Modificado para hacer el logo más pequeño en dispositivos pequeños */
+#logoNav {
+    background-color: none;
+    border-radius: 50%;
+    float: left;
+    height: 100%;
+    margin-left: 10px; /* Modificado para hacerlo más responsivo */
+    margin-top: 0px;
+    width: 60px; /* Modificado para hacerlo más responsivo */
+}
+
+/* NUEVO1  ajuste logo a nav */
+#logo-imagen{
+  float: left;
+  height: 90px;
+  margin-left: 10px;
+  margin-top: 0px;
+  width: 90px; 
+}
+
+
+/* Esto esta igual... */
+#menu
+{
+	float: right;
+	list-style-type: none;
+	margin-right: 80px;
+	overflow: hidden;
+	width: auto;
+}
+
+.elementoMenu
+{
+	float:left;
+	margin: 40px 40px;
+	margin-top: 30px;
+}
+
+.elementoMenu>a
+{
+	color: black;
+	font-family: Arial, sans-serif;
+	font-size: 2.25rem;
+	position: inherit;
+	text-decoration: none;
+	transition-duration: 0.5s;
+	transition-property: color;
+
+}
+
+.elementoMenu>a:hover
+{
+	color: white;
+}
+
+/* Modificado para hacer el contenido responsive usando display: flex */
+.contenedor {
+    display: flex; /* Establece un contenedor flexible */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+}
+
+
+
+/* NUEVO1 desplegable columna perfil REVISAR*/
+/* .colDatosPersonales{
+  top: 120px;
+  position: absolute;
+  background-color: #008E91;
+  width: 550px;
+  line-height: 40px;
+  padding: 22px;
+  height: 110px;
+ 
+} */
+
+/* apartado desplegable fijo */
+/* .colDatosPersonales label{
+  color: white;
+  font-size: 22px;
+  display: block;
+  cursor: pointer;
+} */
+
+/* ver nombre y apellidos */
+/* .info-personal{
+  display: flex;
+} */
+
+/* .info-personal:hover{
+  color: black;
+} */
+
+/* .nombre{
+  padding-top: 5%;
+  margin-left: 5%;
+} */
+/* .apellidos{
+  margin-left: 3%;
+  float: right;
+  padding-top: 5%;
+} */
+/* checkbox para que funcione desplegar */
+/* input{
+  display:none;
+}  */
+
+/* icono flecha */
+/* .button span{
+  float: right;
+  line-height:340% ;
+} */
+/* .button span:hover{
+  color: black;
+} */
+
+/* apartado que se despliega */
+/* .colDatosPersonales ul{
+  position: absolute;
+  background: #008E91;
+  list-style: none;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  border-radius: 5px ;
+  -webkit-border-radius: 5px ;
+  -moz-border-radius: 5px ;
+  -ms-border-radius: 5px ;
+  -o-border-radius: 5px ;
+  display: none;
+} */
+
+/* para abrir el desplegable columna perfil */
+/* [id^=arrow-button]:checked +ul{
+  display: block;
+} */
+
+  /* Datos dentro desplegable columna perfil */
+/* .colDatosPersonales ul li {
+color: white;
+text-decoration: none;
+font-size: 18px;
+display: block;
+line-height: 40px;
+padding:8px 20px;
+cursor: pointer;
+border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+padding-right: 40px;
+	transition-duration: 0.5s;
+	transition-property: color;
+} */
+/* .colDatosPersonales ul li:hover {
+color: black;
+} */
+
+
+/* espaciado entre foto y nombre y contenido del desplegable */
+/* .menu{
+  margin-top: 55px;
+}
+
+.fotoPersonal
+{
+	background-color: none;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+  float: left;
+  margin-top:-15px ;
+} */
+
+
+
+
+/*Esto esta igual*/
+
+.fotoPersonal
+{
+	background-color: none;
+	background-image: url("../Media/cara_generica.jpeg");
+	border-radius: 50%;
+	height: 100px;
+	margin-left: 40px;
+	margin-top: 200px;
+	width: 100px;
+}
+/*Esto tambien lo he modificado*/
+.colDatosPersonales {
+    background-color:  #008E91;  
+    border-style: none;
+    height: 100%;
+    text-align: justify;
+    width: 15%; /* Puedes ajustar el ancho según tus necesidades */
+}
+
+ .colDatosPersonales > p
+{
+	color: black;
+	font-family: Arial, sans-serif;
+	font-size: 1rem;
+	margin-bottom: 20px;
+	padding-top: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+	transition-duration: 0.5s;
+	transition-property: color;
+}
+
+.colDatosPersonales >p:hover
+{
+	color: white;
+} 
+
+/*Aquí comienza la maquetación de los contenidos de las pestañas*/
+
+.tituloPestanya
+{
+	font-family: Arial, sans-serif;
+	font-size: 1.5rem;
+	margin-top: 100px;
+	text-align: center;
+}
+
+.colContenido {
+    background-color: none;
+    height: 100%;
+    width: 85%; /* Puedes ajustar el ancho según tus necesidades */
+}
+
+.panel
+{
+	background-color: #FF914D;
+	border-color:  #008E91; 
+	border-style: solid;
+	float: left;
+	height: 250px;
+	margin-left: 56.75px;
+	margin-right: 56.75px;
+	margin-top: 80px;
+	overflow: hidden;
+	width: calc(33.33% - 127px);
+}
+
+.tituloPanel
+{
+	font-family: Arial, sans-serif;
+	font-size: 1.5rem;
+	margin-top: 30px;
+	text-align: center;
+}
+.contenidoPanel
+{
+	font-family: Arial, sans-serif;
+	font-size: 1rem;
+	text-align: center;
+	transition-duration: 0.5s;
+	transition-property: color;
+  font-weight: bold;
+}
+
+/* nuevo1 */
+.contenidoPanel a{
+  color: black;
+  
+}
+.contenidoPanel a:hover{
+  color:  #008E91;}
+
+
+
+/*Aquí se empieza a maquetar el calendario de la Agenda*/
+
+.panelCalendario
+{
+	background-color: #FF914D;
+	border-color: #008E91;
+	border-style: solid;
+	border-style: none;
+	box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+	float: left;
+	height: 400px;
+	margin-left: 56.75px;
+	margin-right: 56.75px;
+	margin-top: 80px;
+	overflow: hidden;
+	width: calc(33.33% - 127px);
+}
+
+.panelCalendario > header
+{
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 10px;
+  justify-content: space-between;
+}
+
+header .iconos
+{
+  display: flex;
+}
+
+header .iconos span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.5rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.iconos span:last-child
+{
+  margin-right: -10px;
+}
+header .iconos span:hover
+{
+  background: #f2f2f2;
+}
+header .fechaActual
+{
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendario
+{
+  padding: 10px;
+}
+.calendario ul
+{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendario .dias
+{
+  margin-bottom: 20px;
+}
+.calendario li
+{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendario .semanas li
+{
+  font-weight: 500;
+  cursor: default;
+}
+.calendario .dias li
+{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+
+.dias li.inactive
+{
+  color: #aaa;
+}
+.dias li.active
+{
+  color: #fff;
+}
+.dias li::before
+{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.dias li.active::before
+{
+  background: #02D8DE;
+}
+.dias li:not(.active):hover::before
+{
+  background: #f2f2f2;
+}
+
+/*Aquí empieza la maquetación de las asignaturas para el alumno*/
+
+.tabla
+{
+	border-color: #008E91;
+	border-style: solid;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.paddingEntreColumnas td 
+{
+  padding: 0 15px;
+}
+
+/* Modificado para hacer los paneles de foro más responsivos */
+.panelForo {
+    background-color: #FF914D;
+    border-color: #008E91;
+    border-style: solid;
+    float: none; /* Cambiado de left a none */
+    margin: 0 auto; /* Centrar en dispositivos pequeños */
+    margin-bottom: 20px; /* Espaciado inferior */
+    width: 90%; /* Modificado para hacerlo más responsivo */
+}
+
+
+.ultimoMensajeForo
+{
+	font-family: Arial, sans-serif;
+	margin-top: 15px;
+	text-align: center;
+}
+
+/*Aquí empieza las asignaturas para el profesor*/
+
+.panelAsignaturasProfesor
+{
+	background-color: #FF914D;
+	border-color: #008E91;
+	border-style: solid;
+	display: auto;
+	float: left;
+	height: 250px;
+	margin-bottom: 65px;
+	margin-left: 200px;
+	margin-right: 200px;
+	margin-top: 80px;
+	overflow: hidden;
+	width: calc(75%);
+}
+
+/* Estilos para el botón de cerrar sesión */
+.cerrar-sesion-btn {
+    margin-top: 15px;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px; 
+    
+}
+
+.cerrar-sesion-btn:hover {
+    background-color:  #008E91 ;  
+}
+
+/* NUEVO1 para logo log-out */
+#cerrar-sesion-btn-img{
+  width: 40px;
+  height: 40px;
+}
+
+.containerMen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f2f2f2; /* Ajusta el color de fondo según tu diseño */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 80%; /* Ajusta esto según el ancho deseado */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold; /* Opcional para destacar las etiquetas */
+}
+
+.form-group select,
+.form-group textarea {
+  width: 100%; /* Hace que los campos ocupen todo el ancho del .form-group */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #4CAF50; /* Color del botón, ajusta según tu esquema de color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049; /* Color al pasar el ratón por encima, ajusta según tu preferencia */
+}
+
+.containerMen, .tabla-mensajes {
+  margin: 20px auto;
+  width: 70%; 
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Para dar un efecto de elevación ligero */
+}
+
+.tabla-mensajes {
+  margin-top: 40px; /* Espacio adicional arriba de la tabla de mensajes */
+}
+
+table {
+  width: 100%; /* La tabla ocupa todo el ancho del contenedor */
+  border-collapse: collapse; /* Para que los bordes de las celdas se junten */
+}
+
+table, th, td {
+  border: 1px solid #ddd; /* Bordes sutiles para la tabla y las celdas */
+}
+
+th, td {
+  text-align: left;
+  padding: 8px; /* Espaciado dentro de las celdas */
+}
+
+th {
+  background-color: #f2f2f2; /* Un color de fondo para los encabezados de la tabla */
+}
+
+.contenedor2 {
+  display: flex; /* Cambia de flex a block */
+  width: 100%; 
+}
+
+.containerMen, .tabla-mensajes {
+  width: 100%; /* Para que estos elementos ocupen todo el ancho de .colContenido */
+  margin-top: 20px; /* Espacio adicional si lo necesitas */
+  
+}
+
+.tabla-mensajes {
+  width: 80%;
+  margin-top: 20px; /* Agrega un margen superior para separar del contenido anterior */
+}
+
+.textoal {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.bajando {
+  margin-top: 5%;
+}
+
+.sepa{
+  margin-top: 10px;
+}
+
+.izq{
+  margin-left: 5%;
+}

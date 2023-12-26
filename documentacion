@@ -1,0 +1,68 @@
+1. Datos personales
+    - Archivo: datosPersonales.js
+    - Descripción: Este archivo JavaScript se utiliza para actualizar dinámicamente los datos personales del usuario en la página principal.
+
+2. Página principal (index.php)
+    - Archivo: index.php
+    - Descripción: Esta es la página principal de ConSchool para usuarios alumnos. Muestra información personal y listas de foros y categorías.
+
+3. Conexión a la base de datos
+    - Archivo: index.php
+    - Descripción: Establece una conexión a la base de datos MySQL utilizando la función mysqli_connect(). Los detalles de conexión se definen en las variables $servername, $username, $password y $dbname.
+
+4. Datos personales del usuario
+    - Archivo: index.php
+    - Descripción: Consulta la base de datos para obtener los datos personales del usuario actual (nombre, apellidos, curso actual y centro). Los datos se muestran en la página utilizando JavaScript.
+
+5. Foros y categorías
+    - Archivo: index.php
+    - Descripción: Consulta la base de datos para obtener los nombres de las categorías y los títulos de los temas del primer foro (categoriasf1 y temasf1). Los datos se muestran en la página como paneles de foro.
+
+6. Estructura HTML
+    - Archivo: index.php
+    - Descripción: El archivo HTML está estructurado en secciones, como "colDatosPersonales" y "colContenido", para mostrar la información personal y los foros/categorías respectivamente.
+
+7. Estilos CSS
+    - Archivo: styles1.css
+    - Descripción: Se utilizan estilos CSS para dar formato y diseño a la página web. Los estilos se aplican a través de clases y IDs para mantener la coherencia en la apariencia.
+
+8. Inclusión de menú
+    - Archivo: index.php
+    - Descripción: Se incluye un menú de navegación que se encuentra en el archivo "menu_alumno.html" para facilitar la navegación en la página.
+
+9. Actualización dinámica de datos
+    - Archivo: index.php y datosPersonales.js
+    - Descripción: Los datos personales del usuario se actualizan dinámicamente en la página sin necesidad de recargarla gracias a JavaScript y el archivo "datosPersonales.js".
+
+10. Consultas SQL
+    - Archivo: index.php
+    - Descripción: Se utilizan consultas SQL para obtener datos de la base de datos, incluyendo los datos personales del usuario y la información de foros/categorías.
+
+11. Mostrar datos en la página
+    - Archivo: index.php
+    - Descripción: Los datos obtenidos de la base de datos se muestran en la página utilizando JavaScript para actualizar elementos HTML con los valores correspondientes.
+
+12. Cierre de la conexión a la base de datos
+    - Archivo: index.php
+    - Descripción: Al final de la página, se cierra la conexión a la base de datos utilizando la función mysqli_close() para liberar recursos.
+
+13. Enlace a archivos externos
+    - Archivo: index.php
+    - Descripción: Se incluyen enlaces a archivos CSS externos y fuentes de Google para estilos y fuentes personalizadas en la página.
+
+14. Actualización de fechas
+    - Archivo: index.php
+    - Descripción: Se incluyen comentarios que indican que las fechas de los últimos mensajes en los foros deben ser gestionadas con datos de la base de datos (a implementar según sea necesario).
+
+15. Personalización
+    - Archivo: index.php
+    - Descripción: El código proporcionado se adapta a la estructura de tu base de datos y la estructura de la página web ConSchool. Debes personalizar las consultas SQL y los datos según tus necesidades específicas.
+
+16. Foros adicionales
+    - Archivo: index.php
+    - Descripción: Puedes replicar el proceso de recuperación de datos para otros foros y categorías (categoriasf2, temasf2, etc.) siguiendo un patrón similar y ajustando las consultas SQL según sea necesario.
+
+17. Cambios de diseño
+    - Archivo: styles1.css
+    - Descripción: Puedes personalizar los estilos CSS en el archivo "styles1.css" para cambiar la apariencia de la página según tus preferencias.
+
