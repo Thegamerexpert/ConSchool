@@ -23,7 +23,6 @@ class Centro_Educativo
 
     public static function fromBody()
     {
-
         if (isset($_POST['idEvento']) &&) {
             return new Material($_POST['idEvento'], );
         } else {
