@@ -1,5 +1,5 @@
 <?php session_start(); 
-include 'db.php'; // Incluye la conexión a la base de datos
+include_once("../back/connection2.php"); // Incluye la conexión a la base de datos
 
 // Manejar la solicitud POST para agregar un nuevo evento
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

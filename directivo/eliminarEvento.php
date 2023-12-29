@@ -1,6 +1,6 @@
 <?php
 // Incluir conexión a la base de datos
-include 'db.php'; // Incluye la conexión a la base de datos
+include_once("../back/connection2.php"); // Incluye la conexión a la base de datos
 
 if (!isset($_GET['idEvento'])) {
     echo "No se especificó el ID del evento.";

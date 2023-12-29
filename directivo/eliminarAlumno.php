@@ -1,6 +1,6 @@
 <?php
 // Incluir conexión a la base de datos
-include 'db.php';
+include_once("../back/connection2.php");
 
 $id = $_GET['id'];
 $query = "DELETE FROM usuario WHERE idUsuario = '$id'";

@@ -1,6 +1,6 @@
 <?php
 // Conexión a la base de datos
-include 'db.php';
+include_once("../back/connection2.php");
 
 // Si se envía el formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

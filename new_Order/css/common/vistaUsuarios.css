@@ -1,0 +1,19 @@
+.container {
+  margin-top: 5%;
+  width: 100%;
+  display: inline-flex;
+}
+
+.contenido {
+  margin-top: 0.5%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  border: 3px solid #0ba2da;
+  width: 95%;
+}
+
+.tituloPestanya {
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;  
+  text-align: center;
+}

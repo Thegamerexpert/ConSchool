@@ -1,15 +1,6 @@
 <?php
 // Conecta a la base de datos (asegúrate de tener tus credenciales de conexión configuradas)
-$servername = "localhost:3307";
-$username = "root";
-$password = "";
-$dbname = "conschool";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Error de conexión a la base de datos: " . $conn->connect_error);
-}
+include_once("./connection2.php");
 
 if (isset($_GET['idUsuario'])) {
     $idUsuario = $_GET['idUsuario'];

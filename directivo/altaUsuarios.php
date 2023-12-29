@@ -1,5 +1,5 @@
 <?php session_start(); 
-include 'db.php'; // Asegúrate de que la ruta al archivo db.php sea correcta
+include_once("../back/connection2.php"); // Asegúrate de que la ruta al archivo db.php sea correcta
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

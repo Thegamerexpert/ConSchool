@@ -1,5 +1,5 @@
 <?php
-include 'db.php'; // Incluye la conexión a la base de datos
+include_once("../back/connection2.php"); // Incluye la conexión a la base de datos
 
 foreach ($_POST as $key => $value) {
     if (strpos($key, 'nota-') === 0) {

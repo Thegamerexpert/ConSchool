@@ -1,6 +1,6 @@
 <?php
 // Incluir conexión a la base de datos
-include 'db.php';
+include_once("../back/connection2.php");
 
 // Verificar si el ID del alumno ha sido enviado
 if (isset($_GET['id'])) {

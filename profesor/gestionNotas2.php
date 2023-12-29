@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php'; // Incluye la conexión a la base de datos
+include_once("../back/connection2.php"); // Incluye la conexión a la base de datos
 
 // Obtener alumnos y asignaturas de la base de datos
 $alumnos = mysqli_query($conn, "SELECT idUsuario, Nombre, Apellidos FROM usuario WHERE tipo = 'alumno' AND cursoActual = 'Segundo'");

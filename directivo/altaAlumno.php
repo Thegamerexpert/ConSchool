@@ -1,5 +1,5 @@
 <?php session_start(); 
-include 'db.php'; // Asegúrate de que la ruta al archivo db.php sea correcta
+include_once("../back/connection2.php"); // Asegúrate de que la ruta al archivo db.php sea correcta
 
 // Consulta para obtener todos los alumnos
 $query = "SELECT * FROM usuario WHERE tipo = 'alumno'";

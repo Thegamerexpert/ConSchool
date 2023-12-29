@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php'; // Incluye la conexión a la base de datos
+include_once("../back/connection2.php"); // Incluye la conexión a la base de datos
 
 $idAlumno = $_POST['alumno'];
 $idAsignatura = $_POST['asignatura'];

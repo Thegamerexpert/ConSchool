@@ -1,0 +1,66 @@
+.panel
+{
+	background-color: #FF914D;
+	border-color:  #008E91; 
+	border-style: solid;
+	float: left;
+	height: 250px;
+	margin-left: 56.75px;
+	margin-right: 56.75px;
+	margin-top: 10px;
+	overflow: hidden;
+	width: calc(33.33% - 127px);
+}
+
+.tituloPanel
+{
+	font-family: Arial, sans-serif;
+	font-size: 1.5rem;
+	margin-top: 30px;
+	text-align: center;
+}
+.contenidoPanel
+{
+	font-family: Arial, sans-serif;
+	font-size: 1rem;
+	text-align: center;
+	transition-duration: 0.5s;
+	transition-property: color;
+  font-weight: bold;
+}
+
+/* nuevo1 */
+.contenidoPanel a{
+  color: black;
+  
+}
+.contenidoPanel a:hover{
+  color:  #008E91;}
+
+
+
+/*Aquí se empieza a maquetar el calendario de la Agenda*/
+
+.panelCalendario
+{
+	background-color: #FF914D;
+	border-color: #008E91;
+	border-style: solid;
+	border-style: none;
+	box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+	float: left;
+	height: 400px;
+	margin-left: 56.75px;
+	margin-right: 56.75px;
+	margin-top: 80px;
+	overflow: hidden;
+	width: calc(33.33% - 127px);
+}
+
+.panelCalendario > header
+{
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 10px;
+  justify-content: space-between;
+}

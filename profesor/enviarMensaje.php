@@ -9,7 +9,7 @@ if (!isset($_SESSION['userID'])) {
 }
 
 // Incluye el archivo de conexión a la base de datos
-include 'db.php';
+include_once("../back/connection2.php");
 
 $idRemitente = $_SESSION['userID']; // Obtén el ID del usuario de la sesión
 $idDestinatario = $_POST['destinatario'] ?? null; // Obtén el destinatario del formulario o null si no está definido

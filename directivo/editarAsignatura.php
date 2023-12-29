@@ -1,6 +1,6 @@
 <?php
 // Incluir conexión a la base de datos
-include 'db.php';
+include_once("../back/connection2.php");
 // Verificar si el ID de la asignatura está establecido
 if (!isset($_GET['idAsignatura'])) {
     echo "No se especificó el ID de la asignatura.";

@@ -34,7 +34,7 @@
                 <label for="destinatario">Destinatario:</label>
                 <select name="destinatario" id="destinatario">
                     <?php
-                    include 'db.php'; 
+                    include_once("../back/connection2.php");
                    
                     $sql = "SELECT idUsuario, nombre FROM usuario";
                     $result = $conn->query($sql);

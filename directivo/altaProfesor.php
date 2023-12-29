@@ -1,6 +1,6 @@
 <?php session_start(); 
 // Conexión a la base de datos
-include 'db.php';
+include_once("../back/connection2.php");
 
 // Obtener todos los profesores
 $query = "SELECT * FROM usuario WHERE tipo='profesor'";
