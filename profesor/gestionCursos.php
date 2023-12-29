@@ -1,16 +1,6 @@
 <?php
 // Iniciar sesión y conexión a la base de datos
-//session_start();
-$servername = "localhost:3307";
-$username = "root";
-$password = "";
-$dbname = "conschool";
-$con = mysqli_connect($servername, $username, $password, $dbname);
-
-// Verificar la conexión
-if (!$con) {
-    die("La conexión a la base de datos falló: " . mysqli_connect_error());
-}
+include_once("../back/connection.php");
 
 // Funciones para obtener los datos necesarios
 function obtenerAlumnosPorCurso($curso) {

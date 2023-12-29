@@ -1,15 +1,7 @@
 <?php session_start(); 
 include 'db.php'; // Asegúrate de que la ruta al archivo db.php sea correcta
 
-$servername = "localhost:3307";
-$username = "root";
-$password = "";
-$dbname = "conschool";
-$con = mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$con) {
-    die("La conexión a la base de datos falló: " . mysqli_connect_error());
-}
+include_once("../back/connection.php");
 
 $userID = $_SESSION['userID'];
 

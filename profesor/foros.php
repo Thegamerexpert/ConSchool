@@ -36,16 +36,7 @@
 
             <?php
             // Conecta a la base de datos (esto podría estar en un archivo de configuración separado)
-            $servername = "localhost:3307";
-            $username = "root";
-            $password = "";
-            $dbname = "conschool";
-            $con = mysqli_connect($servername, $username, $password, $dbname);
-
-            // Verifica la conexión
-            if (!$con) {
-                die("La conexión a la base de datos falló: " . mysqli_connect_error());
-            }
+            include_once("../back/connection.php");
 
             // Obtén el ID del usuario de la sesión
             $userID = $_SESSION['userID'];
