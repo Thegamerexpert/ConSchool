@@ -29,7 +29,7 @@
             $userClass = $_SESSION["usuarioClase"];
             //print_r($userClass);
 
-            switch ($userClass->tipo) {//Ciretio funciona el redericionamiento no
+            switch ($userClass->tipo) {//Criterio funciona el redericionamiento no
                 case 'alumno':
                     header("Location: http://localhost/new_Order/vista/alumno/");
                     break;
