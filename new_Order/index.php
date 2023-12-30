@@ -2,6 +2,15 @@
 <html lang="es">
 
 <head>
+    <?php 
+    session_start();
+
+    //Imports
+    include_once("./model/dao/common/Autenticacion.php");
+    include_once("./model/services/common/Service_Autenticacion.php");
+    include_once("./model/MySql/connection2.php");
+    include_once("./model/entities/common/class_Usuario.php");
+    ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +23,30 @@
 </head>
 
 <body>
+    <?php 
+    if (isset($_POST['username']) && isset($_POST['password'])) {
+        if (Autenticacion::autenticar($_POST['username'], $_POST['password'])) {
+            $userClass = $_SESSION["usuarioClase"];
+            
+            /*switch ($userClass->tipo) {
+                case 'alumno':
+                    header("Location: ./vista/alumno/index.php");
+                    break;
+                case 'profesor':
+                    header("Location: ./vista/profesor/index.php");
+                    break;
+    
+                case 'administracion':
+                    header("Location: ./vista/directivo/index.php");
+                    break;
+            }*/
+        }else{
+            header("Location: ./index.php?ER=2");
+        }
+    }
+    ?>
     <div class="container">
-        <form id="login-form" action="./model/dao/common/login.php" method="post">
+        <form id="login-form" action="./index.php" method="post">
             <h2><img src="./resources/common/logo1.png" alt="" srcset=""></h2>
             <div class="form-group">
                 <label for="username">Usuario:</label>
