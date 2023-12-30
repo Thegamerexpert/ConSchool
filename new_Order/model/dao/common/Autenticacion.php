@@ -6,20 +6,24 @@ class Autenticacion
 
     public static function autenticar($usuario, $contrasena)
     {
-        if ($row = Servicio_Autenticacion::validarUsuarioContrasena($usuario, $contrasena)) {
+        if ($response = Servicio_Autenticacion::validarUsuarioContrasena($usuario, $contrasena)) {
             $_SESSION[self::claveUsuario] = $usuario;
 
             setcookie(self::cookieUsuario, $usuario);
 
-            //print_r($row);
+            $object = json_decode($response);
+            //print_r($object);
 
-            $_SESSION["usuarioClase"] = Usuario::fromBody($row[0]['idUsuario'], $row[0]['Nombre'], $row[0]['Apellidos'], $row[0]['tipo'], $row[0]['id_centro'], $row[0]['cursoActual']);
 
-            echo $row[0]['idUsuario'];
-            echo $row[0]['Nombre'];
-
-            //echo $_SESSION["usuarioClase"];
+            /*echo $object[0]->idUsuario;
+            echo $object[0]->Nombre;
+            echo $object[0]->Apellidos;
+            echo $object[0]->cursoActual;
+            echo $object[0]->id_centro;
+            echo $object[0]->tipo;*/
+            $_SESSION["usuarioClase"] = Usuario::fromBody($object);            
             //print_r($_SESSION["usuarioClase"]);
+
             return true;
         } else {
             return false;

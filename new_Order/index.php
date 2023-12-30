@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <?php 
+    <?php
     session_start();
 
     //Imports
@@ -17,30 +17,30 @@
     <!--Estiles CSS-->
     <link rel="stylesheet" type="text/css" href="./css/common/general.css">
     <link rel="stylesheet" type="text/css" href="./css/common/login.css">
+    <!--<link rel="stylesheet" href="css/general/bootstrap.min.css">-->
     <!--Nombre aplicacion-->
     <?php include_once("./vista/common/nameApp.html"); ?>
-    <link rel="stylesheet" href="css/general/bootstrap.min.css">
 </head>
 
 <body>
-    <?php 
+    <?php
     if (isset($_POST['username']) && isset($_POST['password'])) {
         if (Autenticacion::autenticar($_POST['username'], $_POST['password'])) {
             $userClass = $_SESSION["usuarioClase"];
-            
-            /*switch ($userClass->tipo) {
+            //print_r($userClass);
+
+            switch ($userClass->tipo) {//Ciretio funciona el redericionamiento no
                 case 'alumno':
-                    header("Location: ./vista/alumno/index.php");
+                    header("Location: http://localhost/new_Order/vista/alumno/");
                     break;
                 case 'profesor':
-                    header("Location: ./vista/profesor/index.php");
+                    header("Location: http://localhost/new_Order/vista/profesor/");
                     break;
-    
                 case 'administracion':
-                    header("Location: ./vista/directivo/index.php");
+                    header("Location: http://localhost/new_Order/vista/directivo/");
                     break;
-            }*/
-        }else{
+            }
+        } else {
             header("Location: ./index.php?ER=2");
         }
     }
