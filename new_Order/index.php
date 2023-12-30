@@ -27,17 +27,17 @@
     if (isset($_POST['username']) && isset($_POST['password'])) {
         if (Autenticacion::autenticar($_POST['username'], $_POST['password'])) {
             $userClass = $_SESSION["usuarioClase"];
-            //print_r($userClass);
+            print_r($userClass);
 
             switch ($userClass->tipo) {//Criterio funciona el redericionamiento no
                 case 'alumno':
-                    header("Location: http://localhost/new_Order/vista/alumno/");
+                    header("Location: http://localhost/new_order/vista/alumno",false);
                     break;
                 case 'profesor':
-                    header("Location: http://localhost/new_Order/vista/profesor/");
+                    header("Location: http://localhost/new_order/vista/profesor",false);
                     break;
                 case 'administracion':
-                    header("Location: http://localhost/new_Order/vista/directivo/");
+                    header("Location: http://localhost/new_order/vista/directivo",false);
                     break;
             }
         } else {

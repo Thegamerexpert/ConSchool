@@ -4,7 +4,7 @@
 
         <?php
 
-        switch ($_SESSION['userType']) {
+        switch ("profesor") {
             case 'alumno': ?>
 
                 <a href="./index.php">

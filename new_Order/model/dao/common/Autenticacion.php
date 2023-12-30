@@ -3,18 +3,20 @@ class Autenticacion
 {
     const claveUsuario = 'Usuario';
     const cookieUsuario = 'Usuario';
+    const cookieUsuarioClassName = 'usuarioClase';
 
     public static function autenticar($usuario, $contrasena)
     {
         if ($response = Servicio_Autenticacion::validarUsuarioContrasena($usuario, $contrasena)) {
-            $_SESSION[self::claveUsuario] = $usuario;
-
+            //Cookies
+            //$_SESSION[self::claveUsuario] = $usuario;
             setcookie(self::cookieUsuario, $usuario);
-
+            setcookie(self::cookieUsuarioClassName, self::cookieUsuarioClassName);
+            
             $object = json_decode($response);
             //print_r($object);
-
-
+            
+            
             /*echo $object[0]->idUsuario;
             echo $object[0]->Nombre;
             echo $object[0]->Apellidos;
@@ -23,7 +25,7 @@ class Autenticacion
             echo $object[0]->tipo;*/
             $_SESSION["usuarioClase"] = Usuario::fromBody($object);            
             //print_r($_SESSION["usuarioClase"]);
-
+            
             return true;
         } else {
             return false;
@@ -33,22 +35,22 @@ class Autenticacion
     public static function ObtenerUsuario()
     {
         if (self::estaAutenticado()) {
-            return $_SESSION[self::claveUsuario];
+            return true;
         }
-        return "";
+        return false;
     }
 
     public static function estaAutenticado()
     {
-        return isset($_SESSION[self::claveUsuario]);
+        return isset($_SESSION[self::cookieUsuarioClassName]);
     }
 
     public static function getCookie()
     {
-        if (isset($_COOKIE[self::cookieUsuario])) {
-            return $_COOKIE[self::cookieUsuario];
+        if (isset($_COOKIE[self::cookieUsuarioClassName])) {
+            return $_COOKIE[self::cookieUsuarioClassName];
         }
-        return "";
+        return null;
     }
 
     private static function redirect($tipo)
