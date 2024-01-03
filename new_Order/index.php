@@ -26,8 +26,9 @@
     <?php
     if (isset($_POST['username']) && isset($_POST['password'])) {
         if (Autenticacion::autenticar($_POST['username'], $_POST['password'])) {
-            $userClass = $_SESSION["usuarioClase"];
-            print_r($userClass);
+            $obj = Usuario::class;
+            $userClass = json_decode($_SESSION["usuarioClase"]);            
+            //print_r($userClass);
 
             switch ($userClass->tipo) {//Criterio funciona el redericionamiento no
                 case 'alumno':

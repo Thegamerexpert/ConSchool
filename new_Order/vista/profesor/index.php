@@ -3,9 +3,12 @@
 session_start();
 
 //Comprueba si esta loggeado
-include_once("../../model/services/common/checkLogged.php");
 include_once("../../model/entities/common/class_Usuario.php");
-$userClass = Usuario::toUserVista();
+include_once("../../model/services/common/checkLogged.php");
+
+//Get From memory
+$userClass = json_decode($_SESSION["usuarioClase"]);
+//$UsuarioNombre = Usuario::getName($_SESSION["usuarioClase"][0]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,8 +40,8 @@ $userClass = Usuario::toUserVista();
         ?>
 
         <div class="contenido">
-            <?php print_r($_SESSION["usuarioClase"]) ?>
-            <h1 class="tituloPestanya">Bienvenido/a Profesor/a <?php echo $_SESSION['usuarioClase']->Nombre ?></h1>
+            <?php print_r($userClass) ?>
+            <h1 class="tituloPestanya">Bienvenido/a Profesor/a <?php echo $userClass->Nombre; ?></h1>
 
             <div class="panel">
 				<p class="tituloPanel">Mis Cursos</p>

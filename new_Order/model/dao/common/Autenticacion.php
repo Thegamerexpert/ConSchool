@@ -4,7 +4,7 @@ class Autenticacion
     const claveUsuario = 'Usuario';
     const cookieUsuario = 'Usuario';
     const cookieUsuarioClassName = 'usuarioClase';
-
+    
     public static function autenticar($usuario, $contrasena)
     {
         if ($response = Servicio_Autenticacion::validarUsuarioContrasena($usuario, $contrasena)) {
@@ -23,7 +23,15 @@ class Autenticacion
             echo $object[0]->cursoActual;
             echo $object[0]->id_centro;
             echo $object[0]->tipo;*/
-            $_SESSION["usuarioClase"] = Usuario::fromBody($object);            
+
+            //Create arrayStorage
+            $arrayMemory = array();
+            //Convert
+            //array_push($arrayMemory,Usuario::fromBody($object));
+            
+            //Save on session
+            $_SESSION["usuarioClase"] = json_encode(Usuario::fromBody($object));            
+            //$_SESSION["usuarioClase"] = $arrayMemory;
             //print_r($_SESSION["usuarioClase"]);
             
             return true;
