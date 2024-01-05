@@ -4,7 +4,9 @@ session_start();
 
 //Comprueba si esta loggeado
 include_once("../../model/services/common/checkLogged.php");
-
+//Get From memory
+$userClass = json_decode($_SESSION["usuarioClase"]);
+//$UsuarioNombre = Usuario::getName($_SESSION["usuarioClase"][0]);
 
 ?>
 <!DOCTYPE html>
@@ -36,7 +38,7 @@ include_once("../../model/services/common/checkLogged.php");
         ?>
 
         <div class="contenido">
-            <h1 class="tituloPestanya">Bienvenido/a Profesor/a <?php echo $_SESSION['userName'] ?></h1>
+        <h1 class="tituloPestanya">Bienvenido/a Profesor/a <?php echo $userClass->Nombre; ?></h1>
         </div>
 
     </div>
