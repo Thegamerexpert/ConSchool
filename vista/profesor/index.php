@@ -3,12 +3,26 @@
 session_start();
 
 //Comprueba si esta loggeado
-include_once("../../model/entities/common/class_Usuario.php");
 include_once("../../model/services/common/checkLogged.php");
 
+//Classes
+include_once("../../model/entities/common/class_Usuario.php");
+include_once("../../model/entities/common/class_Mensaje.php");
+include_once("../../model/entities/common/class_Evento.php");
+
+//Services
+include_once("../../model/services/common/Service_Mensaje.php");
+include_once("../../model/services/common/Service_Evento.php");
+
 //Get From memory
-$userClass = json_decode($_SESSION["usuarioClase"]);
-//$UsuarioNombre = Usuario::getName($_SESSION["usuarioClase"][0]);
+$usuario = Usuario::frontBody();
+$usuarioPerfil = get_object_vars($_SESSION["usuarioPerfil"]);
+
+//Obtener todos los mensajes
+$mensaje = Mensaje::frontBody();
+$evento = Evento::frontBody();
+$ListaMensajes = Servicio_Mensaje::LeerMensajes();
+$ListaEventos = Servicio_Evento::LeerEventos();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,8 +54,14 @@ $userClass = json_decode($_SESSION["usuarioClase"]);
         ?>
 
         <div class="contenido">
-            <?php print_r($userClass) ?>
-            <h1 class="tituloPestanya">Bienvenido/a Profesor/a <?php echo $userClass->Nombre; ?></h1>
+            <div>
+                <?php 
+                    //print_r($usuarioPerfil);
+                    //print_r($ListaMensajes);
+                    //print_r($ListaEventos);
+                ?>
+            </div>
+            <h1 class="tituloPestanya">Bienvenido/a Profesor/a <?php echo $usuarioPerfil["Nombre"]; ?></h1>
 
             <div class="panel">
 				<p class="tituloPanel">Mis Cursos</p>
@@ -88,18 +108,30 @@ $userClass = json_decode($_SESSION["usuarioClase"]);
 
             <!-- Panel de Mensajes -->
             <div class="panel">
-                <p class="tituloPanel">Mensajes</p>
-                <?php foreach ($ultimosMensajes as $mensaje): ?>
-                    <p class="contenidoPanel"><?php echo htmlspecialchars($mensaje['textoMensaje']); ?></p>
-                <?php endforeach; ?>
+                <p class="tituloPanel">Lista de mensajes</p>
+                <?php
+                    if (count($ListaMensajes) <= 0) { ?>
+                        <h2 class="warning">Parece que de momento no hay mensajes</h2>
+                    <?php } else {
+                        foreach ($ListaMensajes as $mensaje) {?>
+                            <?php echo htmlspecialchars($mensaje->textoMensaje); ?></p>
+                        <?php }
+                    }
+                ?>
             </div>
 
             <!-- Panel de Eventos -->
             <div class="panel">
-                <p class="tituloPanel">Eventos</p>
-                <?php foreach ($proximosEventos as $evento): ?>
-                    <p class="contenidoPanel"><?php echo htmlspecialchars($evento); ?></p>
-                <?php endforeach; ?>
+                <p class="tituloPanel">Lista de Eventos</p>
+                <?php                
+                    if (count($ListaEventos) <= 0) { ?>
+                        <h2 class="warning">Parece que de momento no hay mensajes</h2>
+                    <?php } else {
+                        foreach ($ListaEventos as $evento) {?>
+                            <?php echo htmlspecialchars($evento->nombreEvento); ?></p>
+                        <?php }
+                    }
+                ?>
             </div>
             
         </div>
@@ -110,10 +142,10 @@ $userClass = json_decode($_SESSION["usuarioClase"]);
     <!--Scripts-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./js/profesor/login.js"></script>
+    <script src="./js/profesor/"></script>
 
     <script type="text/javascript">
-        window.addEventListener("load", searchErrors);
+        //window.addEventListener("load", searchErrors);
     </script>
 </body>
 

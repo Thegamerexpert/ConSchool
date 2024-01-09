@@ -4,7 +4,7 @@
 
         <?php
 
-        switch ($userClass->tipo) {
+        switch ($usuarioPerfil["tipo"]) {
             case 'alumno': ?>
 
                 <a href="./index.php">

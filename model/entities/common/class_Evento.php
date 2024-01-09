@@ -1,33 +1,39 @@
 <?php
 
-class Material
+class Evento
 {
-    public int $id_Evento;
-    public string $nombre_Evento;
+    public int $idEvento;
+    public string $nombreEvento;
     public string $descripcion;
-    public DateTime $fecha_Evento;
-    public DateTime $hora_Evento;
+    public DateTime $fechaEvento;
+    public DateTime $horaEvento;
 
-    function __construct(string $id_Evento, string $nombre_Evento, 
-    string $descripcion, string $fecha_Evento, string $hora_Evento)
+    function __construct(string $idEvento, string $nombreEvento, 
+    string $descripcion, string $fechaEvento, string $horaEvento)
     {
-        $this->id_Evento = (int)$id_Evento;
-        $this->nombre_Evento = $nombre_Evento;
+        $this->idEvento = (int)$idEvento;
+        $this->nombreEvento = $nombreEvento;
         $this->descripcion = $descripcion;
-        $this->fecha_Evento = $fecha_Evento;
-        $this->hora_Evento = (int)$hora_Evento;
+        $this->fechaEvento = new DateTime($fechaEvento);
+        $this->horaEvento = new DateTime($horaEvento);
     }
 
-    public static function fromBody()
+    public static function frontBody()
     {
         $fecha = new DateTime(); 
-        $fecha_Evento = $fecha->format("Y-m-d");
-        $hora_Evento = $fecha->format("H:i:s");
+        $fechaEvento = $fecha->format("Y-m-d");
+        $horaEvento = $fecha->format("H:i:s");
 
         if (isset($_POST['idEvento']) && isset($_POST['nombreEvento']) && isset($_POST['descripcion']) && isset($_POST['fechaEvento']) && isset($_POST['horaEvento'])) {
-            return new Material($_POST['idEvento'], $_POST['nombreEvento'], $_POST['descripcion'], $fecha_Evento, $hora_Evento);
+            return new Evento($_POST['idEvento'], $_POST['nombreEvento'], $_POST['descripcion'], $fechaEvento, $horaEvento);
         } else {
-            return new Material("0", "", "", $fecha_Evento, $hora_Evento);
+            return new Evento("0", "", "", $fechaEvento, $horaEvento);
         }
+    }
+
+    public static function toUserVista($object)
+    {
+        //print_r($object);
+        return new Evento($object["idEvento"], $object["nombreEvento"], $object["descripcion"], $object["fechaEvento"], $object["horaEvento"]);
     }
 }

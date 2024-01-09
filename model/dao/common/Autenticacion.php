@@ -3,8 +3,8 @@ class Autenticacion
 {
     const claveUsuario = 'Usuario';
     const cookieUsuario = 'Usuario';
-    const cookieUsuarioClassName = 'usuarioClase';
-    
+    const cookieUsuarioClassName = 'usuarioPerfil';
+
     public static function autenticar($usuario, $contrasena)
     {
         if ($response = Servicio_Autenticacion::validarUsuarioContrasena($usuario, $contrasena)) {
@@ -12,28 +12,17 @@ class Autenticacion
             //$_SESSION[self::claveUsuario] = $usuario;
             setcookie(self::cookieUsuario, $usuario);
             setcookie(self::cookieUsuarioClassName, self::cookieUsuarioClassName);
-            
-            $object = json_decode($response);
-            //print_r($object);
-            
-            
-            /*echo $object[0]->idUsuario;
-            echo $object[0]->Nombre;
-            echo $object[0]->Apellidos;
-            echo $object[0]->cursoActual;
-            echo $object[0]->id_centro;
-            echo $object[0]->tipo;*/
 
-            //Create arrayStorage
-            $arrayMemory = array();
-            //Convert
-            //array_push($arrayMemory,Usuario::fromBody($object));
-            
+            //print_r($response);
+            //Convert in Usuario object
+            $usuarioPerfil = Usuario::frontBody();
+            foreach ($response as $object) {
+                $usuarioPerfil = Usuario::toUserVista($object);
+            }
+
             //Save on session
-            $_SESSION["usuarioClase"] = json_encode(Usuario::fromBody($object));            
-            //$_SESSION["usuarioClase"] = $arrayMemory;
-            //print_r($_SESSION["usuarioClase"]);
-            
+            //print_r($usuarioPerfil);
+            $_SESSION["usuarioPerfil"] = $usuarioPerfil;
             return true;
         } else {
             return false;

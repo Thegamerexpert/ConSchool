@@ -6,7 +6,7 @@ include_once("../../model/dao/common/Autenticacion.php");
 }*/
 
 if (!Autenticacion::estaAutenticado()) {
-    header("Location: ../../../index.php");
+    header("Location: ../../index.php");
     exit;
 }
 ?>

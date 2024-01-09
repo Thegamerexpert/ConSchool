@@ -1,30 +1,37 @@
 <?php
+
 class Mensaje
 {
     public int $idMensaje;
-    public string $usuario;
-    public string $tipoUsuario;
-    public string $mensaje;
-    public DateTime $fecha;
+    public int $idRemitente;
+    public int $idDestinatario;
+    public string  $textoMensaje;
+    public DateTime $fechaHoraEnvio;
+    public bool $leido;
 
-    function __construct(string $usuario, string $tipoUsuario, string $mensaje, 
-    $fecha)
+    function __construct(string $idMensaje, string $idRemitente, string $idDestinatario, string $textoMensaje, string $fechaHoraEnvio, string $leido)
     {
-        $this->usuario = $usuario;
-        $this->tipoUsuario = $tipoUsuario;
-        $this->mensaje = $mensaje;
-        $this->fecha = $fecha;
+        $this->idMensaje = (int)$idMensaje;
+        $this->idRemitente = (int)$idRemitente;
+        $this->idDestinatario = (int)$idDestinatario;
+        $this->textoMensaje = $textoMensaje;
+        $this->fechaHoraEnvio = new DateTime($fechaHoraEnvio);
+        $this->leido = (int)$leido;
     }
 
-
-    public static function fromBody()
+    public static function frontBody()
     {
-        $fecha = new DateTime();
-
-        if (isset($_POST['usuario']) && isset($_POST['tipoUsuario']) && isset($_POST['mensaje'])) {
-            return new Mensaje($_POST['usuario'], $_POST['tipoUsuario'], $_POST['mensaje'], $fecha);
+        $fechaMensaje = new DateTime();
+        if (isset($_POST['idMensaje'], $_POST['idRemitente'], $_POST['idDestinatario'], $_POST['textoMensaje'], $_POST['fechaHoraEnvio'], $_POST['leido'])) {
+            return new Mensaje($_POST['idMensaje'], $_POST['idRemitente'], $_POST['idDestinatario'], $_POST['textoMensaje'], $_POST['fechaHoraEnvio'], $_POST['leido']);
         } else {
-            return new Mensaje("", "normal", "", $fecha);
+            return new Mensaje("0", "0", "0", "", $fechaMensaje->format("c"), "0");
         }
+    }
+
+    public static function toUserVista($object)
+    {
+        //print_r($object);
+        return new Mensaje($object["idMensaje"], $object["idRemitente"], $object["idDestinatario"], $object["textoMensaje"], $object["fechaHoraEnvio"], $object["leido"]);
     }
 }
