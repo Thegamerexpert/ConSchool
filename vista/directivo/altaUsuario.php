@@ -5,6 +5,8 @@ session_start();
 //Comprueba si esta loggeado
 include_once("../../model/services/common/checkLogged.php");
 
+//Get From memory
+$usuarioPerfil = get_object_vars($_SESSION["usuarioPerfil"]);
 
 ?>
 <!DOCTYPE html>
@@ -36,7 +38,7 @@ include_once("../../model/services/common/checkLogged.php");
         ?>
 
         <div class="contenido">
-        <h1 class="tituloPestanya">Bienvenido/a Administrador/a <?php echo $_SESSION['userName'] ?></h1>
+        <h1 class="tituloPestanya">Bienvenido/a Administrador/a <?php echo $usuarioPerfil["Nombre"]; ?></h1>
         </div>
 
     </div>

@@ -4,10 +4,25 @@ session_start();
 
 //Comprueba si esta loggeado
 include_once("../../model/services/common/checkLogged.php");
-//Get From memory
-$userClass = json_decode($_SESSION["usuarioClase"]);
-//$UsuarioNombre = Usuario::getName($_SESSION["usuarioClase"][0]);
 
+//Classes
+include_once("../../model/entities/common/class_Usuario.php");
+include_once("../../model/entities/common/class_Mensaje.php");
+include_once("../../model/entities/common/class_Evento.php");
+
+//Services
+include_once("../../model/services/common/Service_Mensaje.php");
+include_once("../../model/services/common/Service_Evento.php");
+
+//Get From memory
+$usuario = Usuario::frontBody();
+$usuarioPerfil = get_object_vars($_SESSION["usuarioPerfil"]);
+
+//Obtener todos los mensajes
+$mensaje = Mensaje::frontBody();
+$evento = Evento::frontBody();
+$ListaMensajes = Servicio_Mensaje::LeerMensajes();
+$ListaEventos = Servicio_Evento::LeerEventos();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +38,7 @@ $userClass = json_decode($_SESSION["usuarioClase"]);
     <link rel="stylesheet" href="../../css/common/vistaUsuarios.css">
     <link rel="stylesheet" href="../../css/common/topNav.css">
     <link rel="stylesheet" href="../../css/common/leftNav.css">
+    <link rel="stylesheet" href="../../css/profesor/paneles.css">
 </head>
 
 <body>
@@ -38,18 +54,29 @@ $userClass = json_decode($_SESSION["usuarioClase"]);
         ?>
 
         <div class="contenido">
-        <h1 class="tituloPestanya">Bienvenido/a Profesor/a <?php echo $userClass->Nombre; ?></h1>
+            <div>
+                <?php 
+                    //print_r($usuarioPerfil);
+                    //print_r($ListaMensajes);
+                    //print_r($ListaEventos);
+                ?>
+            </div>
+            <h1 class="tituloPestanya">Bienvenido/a Profesor/a <?php echo $usuarioPerfil["Nombre"]; ?></h1>
+
+            
+            
         </div>
 
     </div>
 
+
     <!--Scripts-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./js/directivo/login.js"></script>
+    <script src="./js/profesor/"></script>
 
     <script type="text/javascript">
-        window.addEventListener("load", searchErrors);
+        //window.addEventListener("load", searchErrors);
     </script>
 </body>
 

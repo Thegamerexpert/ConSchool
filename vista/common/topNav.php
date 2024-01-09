@@ -41,10 +41,10 @@
                 </a>
                 <ul id="menu">
                     <li class="elementoMenu"><a href="index.php">Inicio</a></li>
-                    <li class="elementoMenu"><a href="altaUsuarios.php">Usuario</a></li>
+                    <li class="elementoMenu"><a href="altaUsuario.php">Usuario</a></li>
                     <li class="elementoMenu"><a href="altaCurso.php">Cursos</a></li>
                     <li class="elementoMenu"><a href="mensajes.php">Mensajes</a></li>
-                    <li class="elementoMenu"><a href="listarEventos.php">Gestión Agenda</a></li>
+                    <li class="elementoMenu"><a href="Eventos.php">Gestión Agenda</a></li>
                 </ul>
 
         <?php break;

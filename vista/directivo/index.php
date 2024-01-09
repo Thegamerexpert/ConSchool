@@ -10,12 +10,11 @@ include_once("../../model/entities/common/class_Usuario.php");
 include_once("../../model/entities/common/class_Mensaje.php");
 include_once("../../model/entities/common/class_Evento.php");
 
-//Classes
+//Services
 include_once("../../model/services/common/Service_Mensaje.php");
 include_once("../../model/services/common/Service_Evento.php");
 
 //Get From memory
-$usuario = Usuario::frontBody();
 $usuarioPerfil = get_object_vars($_SESSION["usuarioPerfil"]);
 
 //Obtener todos los mensajes
