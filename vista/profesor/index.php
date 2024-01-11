@@ -9,10 +9,12 @@ include_once("../../model/services/common/checkLogged.php");
 include_once("../../model/entities/common/class_Usuario.php");
 include_once("../../model/entities/common/class_Mensaje.php");
 include_once("../../model/entities/common/class_Evento.php");
+include_once("../../model/entities/common/class_Foro.php");
 
 //Services
 include_once("../../model/services/common/Service_Mensaje.php");
 include_once("../../model/services/common/Service_Evento.php");
+include_once("../../model/services/common/Service_Foro.php");
 
 //Get From memory
 $usuario = Usuario::frontBody();
@@ -20,9 +22,15 @@ $usuarioPerfil = get_object_vars($_SESSION["usuarioPerfil"]);
 
 //Obtener todos los mensajes
 $mensaje = Mensaje::frontBody();
-$evento = Evento::frontBody();
 $ListaMensajes = Servicio_Mensaje::LeerMensajes();
+//Eventos
+$evento = Evento::frontBody();
 $ListaEventos = Servicio_Evento::LeerEventos();
+//Foros
+$foro = Foro::frontBodyTutoria();
+$ListaForosTutorias = Servicio_Foro::LeerEventosTutorias();
+$ListaForosConsultasProfesores = Servicio_Foro::LeerEventosConsultasProf();
+$ListaForosExamenes = Servicio_Foro::LeerEventosExamenes();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,6 +67,9 @@ $ListaEventos = Servicio_Evento::LeerEventos();
                     //print_r($usuarioPerfil);
                     //print_r($ListaMensajes);
                     //print_r($ListaEventos);
+                    //print_r($ListaForosTutorias);
+                    //print_r($ListaForosConsultasProfesores);
+                    //print_r($ListaForosExamenes);
                 ?>
             </div>
             <h1 class="tituloPestanya">Bienvenido/a Profesor/a <?php echo $usuarioPerfil["Nombre"]; ?></h1>
@@ -95,13 +106,43 @@ $ListaEventos = Servicio_Evento::LeerEventos();
 				<p class="tituloPanel">Foros activos</p>
 				<br>
 				<p class="contenidoPanel"><a href="" id="foro1">Tutoría</a></p>
-				<p id="contenidof1"></p>
+				<p id="contenidof1">
+                    <?php
+                        if (count($ListaForosTutorias) <= 0) { ?>
+                            <h2 class="warning">Parece que de momento no hay mensajes</h2>
+                        <?php } else {
+                            foreach ($ListaForosTutorias as $foro) {?>
+                                Ultimo mensaje <?php echo htmlspecialchars($foro->fechaCreacion->format("Y-m-d H:i:s")); ?>: <?php echo htmlspecialchars($foro->contenidoRespuesta); ?></p>
+                            <?php }
+                        }
+                     ?>
+                </p>
 				<br>
 				<p class="contenidoPanel"><a href="" id="foro2">Consulta a tus profesores</a></p>
-				<p id="contenidof2"></p>
+				<p id="contenidof2">
+                    <?php
+                        if (count($ListaForosConsultasProfesores) <= 0) { ?>
+                            <h2 class="warning">Parece que de momento no hay mensajes</h2>
+                        <?php } else {
+                            foreach ($ListaForosConsultasProfesores as $foro) {?>
+                                Ultimo mensaje <?php echo htmlspecialchars($foro->fechaCreacion->format("Y-m-d H:i:s")); ?>: <?php echo htmlspecialchars($foro->contenidoRespuesta); ?></p>
+                            <?php }
+                        }
+                     ?>
+                </p>
 				<br>
 				<p class="contenidoPanel"><a href="" id="foro3">Exámenes</a></p>
-				<p id="contenidof3"></p>
+				<p id="contenidof3">
+                    <?php
+                        if (count($ListaForosExamenes) <= 0) { ?>
+                            <h2 class="warning">Parece que de momento no hay mensajes</h2>
+                        <?php } else {
+                            foreach ($ListaForosExamenes as $foro) {?>
+                                Ultimo mensaje <?php echo htmlspecialchars($foro->fechaCreacion->format("Y-m-d H:i:s")); ?>: <?php echo htmlspecialchars($foro->contenidoRespuesta); ?></p>
+                            <?php }
+                        }
+                     ?>
+                </p>
 				<br>
 
 			</div>
