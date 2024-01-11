@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost:3307";  // o tu dirección del servidor
-$username = "root";
-$password = "";
+$username = "conschool";
+$password = "conschool";
 $dbname = "conschool";
 
 // Crear conexión

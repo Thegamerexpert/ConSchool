@@ -69,9 +69,9 @@ if ($resultEventos) {
 				
 				<p class="contenidoPanel"><a href="gestionCursos1.php">Primero</a></p>
 				<br>
-				<p class="contenidoPanel"><a href="gestion_curso2.php">Segundo</a></p>
+				<p class="contenidoPanel"><a href="gestionCursos2.php">Segundo</a></p>
 				<br>
-				<p class="contenidoPanel"><a href="gestion_curso3.php">Tercero</a></p>
+				<p class="contenidoPanel"><a href="#">Tercero</a></p>
 				<br>
 				
 			</div>
@@ -84,7 +84,7 @@ if ($resultEventos) {
 				<br>
 				<p class="contenidoPanel"><a href="gestionNotas2.php">Segundo</a></p>
 				<br>
-				<p class="contenidoPanel"><a href="gestionNotas3.php">Tercero</a></p>
+				<p class="contenidoPanel"><a href="#">Tercero</a></p>
 				<br>
 				
 			</div>
@@ -131,6 +131,7 @@ if ($resultEventos) {
 if ($result->num_rows > 0) {
     // Existe al menos un mensaje
     $row = $result->fetch_assoc();
+    print_r($row);
     $mensaje = $row["contenidoRespuesta"];
     $hora = $row["fechaCreacion"];
 } else {
@@ -145,6 +146,7 @@ $result = $con->query($sql2);
 if ($result->num_rows > 0) {
     // Existe al menos un mensaje
     $row = $result->fetch_assoc();
+    print_r($row);
     $mensaje2 = $row["contenidoRespuesta"];
     $hora2 = $row["fechaCreacion"];
 } else {
@@ -159,6 +161,7 @@ $result = $con->query($sql3);
 if ($result->num_rows > 0) {
     // Existe al menos un mensaje
     $row = $result->fetch_assoc();
+    print_r($row);
     $mensaje3 = $row["contenidoRespuesta"];
     $hora3 = $row["fechaCreacion"];
 } else {

@@ -131,8 +131,8 @@
 <?php
 // Conecta a la base de datos (esto podría estar en un archivo de configuración separado)
 $servername = "localhost:3307";
-$username = "root";
-$password = "";
+$username = "conschool";
+$password = "conschool";
 $dbname = "conschool";
 $con = mysqli_connect($servername, $username, $password, $dbname);
 

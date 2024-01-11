@@ -6,7 +6,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // Realizar la verificación de las credenciales en la base de datos
-$query = "SELECT idUsuario, tipo FROM Usuario WHERE Nombre = '$username' AND contraseña = '$password'";
+$query = "SELECT idUsuario, tipo FROM Usuario WHERE Nombre = '$username' AND contrasena = '$password'";
 $result = mysqli_query($con, $query);
 
 if (mysqli_num_rows($result) == 1) {

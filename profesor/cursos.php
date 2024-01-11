@@ -45,7 +45,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                 <h2>Docente en:</h2>
                 <a class="textoal" href="gestionCursos1.php">Primero</a></br>
                 <a class="textoal" href="gestionCursos2.php">Segundo</a></br>
-                <a class="textoal" href="gestionCursos3.php">Tercero</a></br>
+                <a class="textoal" href="#">Tercero</a></br>
             </div>
         </div>
     </div>

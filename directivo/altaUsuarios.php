@@ -44,7 +44,7 @@ include_once("../back/connection2.php"); // Asegúrate de que la ruta al archivo
 				<br>
 				<p class="contenidoPanel"><a href="altaProfesor.php">Profesores</a></p>
 				<br>
-				<p class="contenidoPanel"><a href="altaAdministrativo.php">Administrativos</a></p>
+				<p class="contenidoPanel"><a href="#">Administrativos</a></p>
 				<br>
 				
 

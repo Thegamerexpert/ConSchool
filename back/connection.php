@@ -2,8 +2,8 @@
 
 // Configuración de la conexión a la base de datos
 $servername = "localhost:3307";
-$username = "root";
-$password = "";
+$username = "conschool";
+$password = "conschool";
 $dbname = "conschool";
 
 // Crear conexión
