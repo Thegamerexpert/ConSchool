@@ -19,7 +19,7 @@
                 <label for="password">Contraseña:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: none;">
                 <label for="user-type">Tipo de Usuario:</label>
                 <select id="user-type" name="user-type">
                     <option value="alumno">Alumno</option>
