@@ -88,7 +88,6 @@ $ListaEventos = Servicio_Evento::LeerEventos();
 				
 			</div>
 
-
             <div class="panel">
 
 				<p class="tituloPanel">Foros activos</p>
@@ -136,7 +135,6 @@ $ListaEventos = Servicio_Evento::LeerEventos();
         </div>
 
     </div>
-
 
     <!--Scripts-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
