@@ -4,7 +4,7 @@
 $servername = "localhost:3307";
 $username = "conschool";
 $password = "conschool";
-$dbname = "conschool";
+$dbname = "studio_conschool";
 
 // Crear conexión
 $con = mysqli_connect($servername, $username, $password, $dbname);
